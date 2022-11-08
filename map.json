@@ -2716,6 +2716,12 @@
                  "y":790.909090909091
                 }],
          "opacity":1,
+         "properties":[
+                {
+                 "name":"tag",
+                 "type":"string",
+                 "value":"moderator"
+                }],
          "type":"objectgroup",
          "visible":true,
          "x":0,
