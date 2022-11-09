@@ -20,7 +20,7 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
     
 	WA.room.onEnterZone("directions1", () => {
-    currentPopup =  WA.ui.openPopup("popUpStart","Möchtest du die Aufgabe starten?",[
+    currentPopup =  WA.ui.openPopup("popUpStart","Willkommen!",[
             {
                 label: "Ja",
                 callback: (popup => {
@@ -45,7 +45,7 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 	
 
     WA.room.onEnterZone(zoneMusikModern, () => {
-    currentPopup =  WA.ui.openPopup("popUpMusicModern","Weihnachtslieder?!",[
+    currentPopup =  WA.ui.openPopup("popUpMusicModern","Musik?",[
             {
                 label: "Her damit!",
                 callback: (popup => {
@@ -93,13 +93,6 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
             label: "Züge zurückhalten",
             callback: (popup => {
                 WA.nav.openTab(WA.state.it_4);
-            })
-        },
-		{
-            label: "Schließen",
-			className: "warning",
-            callback: (popup => {
-                closePopUp();
             })
         }
     ]);
