@@ -18,7 +18,7 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
     var zoneDirections1 = "directions1";
     var zoneDirections2 = "directions2";
 
-    WA.room.onEnterZone("popUp_start", () => {
+    WA.room.onEnterZone("directions1", () => {
     currentPopup =  WA.ui.openPopup("popUpStart","Möchtest du die Aufgabe starten?",[
            {
             label: "Ja",
@@ -36,7 +36,7 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
             }]);
     })
 
-    WA.room.onLeaveZone("popUp_start", () =>{
+    WA.room.onLeaveZone("directions1", () =>{
         closePopUp();
 
         if (isCoWebSiteOpened) {
