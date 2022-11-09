@@ -1,7 +1,7 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 var isCoWebSiteOpened =  false;
+
 var currentPopup = undefined
-    
 	
     var urlMusikModern = "https://www.youtube.com/embed/nHxsomFVJtU";
 	
