@@ -1,10 +1,9 @@
-import { bootstrapExtra } from "@workadventure/scripting-api-extra";
+import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
    
 
     var currentPopup = undefined;
     var isCoWebSiteOpened =  false;
-    var urlMusikClassic = "https://open.spotify.com/embed/playlist/37i9dQZF1DX1LCddwjCqDK?utm_source=generator";
     var urlMusikModern = "https://www.youtube.com/embed/nHxsomFVJtU";
 	
     function closePopUp(){
@@ -14,25 +13,30 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
         }
     }
 
-    var zoneMusikClassic = "music_classic";
     var zoneMusikModern = "music_modern";
     var zoneDirections = "directions";
     var zoneDirections1 = "directions1";
     var zoneDirections2 = "directions2";
 
-    WA.room.onEnterZone(zoneMusikClassic, () => {
-    currentPopup =  WA.ui.openPopup("popUpMusicClassic","Klassische Weihnachtslieder?!",[
-            {
-                label: "Her damit!",
-                callback: (popup => {
-                    WA.nav.openCoWebSite(urlMusikClassic);
-                    isCoWebSiteOpened = true;
-                    closePopUp();
-                })
+    WA.room.onEnterZone("popUp_start", () => {
+    currentPopup =  WA.ui.openPopup("popUpStart","Möchtest du die Aufgabe starten?",[
+           {
+            label: "Ja",
+            callback: (popup => {
+                WA.nav.openTab(WA.state.start_var);
+            })
+        },
+		{
+            label: "Schließen",
+			className: "warning",
+            callback: (popup => {
+                closePopUp();
+            })
+        
             }]);
     })
 
-    WA.room.onLeaveZone(zoneMusikClassic, () =>{
+    WA.room.onLeaveZone("popUp_start", () =>{
         closePopUp();
 
         if (isCoWebSiteOpened) {
@@ -62,43 +66,9 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
         }
     })
 
-    WA.room.onEnterZone(zoneDirections, () => {
-    currentPopup =  WA.ui.openPopup("popUpDirections","Hier könnte auf Ihre Werbung verlinkt werden!",[
-            {
-                label: "OK",
-                callback: (popup => {
-                    closePopUp();
-                })
-            }]);
-    })
+    
 
-    WA.room.onLeaveZone(zoneDirections, () =>{
-        closePopUp();
-
-        if (isCoWebSiteOpened) {
-            WA.nav.closeCoWebSite();
-            isCoWebSiteOpened = false;
-        }
-    })
-
-    WA.room.onEnterZone(zoneDirections1, () => {
-    currentPopup =  WA.ui.openPopup("popUpDirections1","Wegweiser:\n\nNordosten: Kleiner Weihnachtsmarkt an der Kirche\n\nSüdosten: Der mittelalterliche Weihnachtsmarkt heißet euch Willkommen!\n\nSüdwesten: Großer Parkweihnachtsmarkt\n\nNordwesten: Die Eisbahn wartet auf dich!",[
-            {
-                label: "OK",
-                callback: (popup => {
-                    closePopUp();
-                })
-            }]);
-    })
-
-    WA.room.onLeaveZone(zoneDirections1, () =>{
-        closePopUp();
-
-        if (isCoWebSiteOpened) {
-            WA.nav.closeCoWebSite();
-            isCoWebSiteOpened = false;
-        }
-    })
+    
 
     WA.room.onEnterZone(zoneDirections2, () => {
     currentPopup =  WA.ui.openPopup("popUpDirections2","Möchtest du die Aufgabe starten?",[
@@ -141,3 +111,21 @@ WA.room.onLeaveZone(zoneDirections2, () =>{
     closePopUp();
 
 })
+
+
+
+
+WA.room.onEnterZone("game_fire", () => {
+   
+            
+    WA.nav.openCoWebSite(WA.state.game_classic);
+	isCoWebSiteOpened = true;
+                  
+          
+    })
+WA.room.onLeaveZone("game_fire", () =>{
+        if (isCoWebSiteOpened) {
+            WA.nav.closeCoWebSite();
+            isCoWebSiteOpened = false;
+        }
+    })
