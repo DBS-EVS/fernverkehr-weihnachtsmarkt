@@ -18,21 +18,16 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
     var zoneDirections1 = "directions1";
     var zoneDirections2 = "directions2";
 
-    WA.room.onEnterZone("directions1", () => {
+    
+	WA.room.onEnterZone("directions1", () => {
     currentPopup =  WA.ui.openPopup("popUpStart","Möchtest du die Aufgabe starten?",[
-           {
-            label: "Ja",
-            callback: (popup => {
-                WA.nav.openTab(WA.state.start_var);
-            })
-        },
-		{
-            label: "Schließen",
-			className: "warning",
-            callback: (popup => {
-                closePopUp();
-            })
-        
+            {
+                label: "Ja",
+                callback: (popup => {
+                    WA.nav.openTab(WA.state.start_var);
+                    isCoWebSiteOpened = true;
+                    closePopUp();
+                })
             }]);
     })
 
@@ -44,6 +39,10 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
             isCoWebSiteOpened = false;
         }
     })
+	
+	
+	
+	
 
     WA.room.onEnterZone(zoneMusikModern, () => {
     currentPopup =  WA.ui.openPopup("popUpMusicModern","Weihnachtslieder?!",[
