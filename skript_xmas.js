@@ -1,9 +1,14 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
-
-   
-
-    var currentPopup = undefined;
-    var isCoWebSiteOpened =  false;
+var isCoWebSiteOpened =  false;
+var currentPopup = currentPopup =  WA.ui.openPopup("popUpStart","Willkommen! Du findest folgende Bereiche:\n\nOben Rechts: IT & Regelwerk\n\nUnten Rechts: Rettungszüge\n\nUnten Links: ZKB, FeB, Fahrzeugeinsatz\n\nOben Links: Auswertung und Abschluss",[
+            {
+                label: "Schließen",
+                callback: (popup => {
+                    closePopUp();
+                })
+            }]);
+    
+	
     var urlMusikModern = "https://www.youtube.com/embed/nHxsomFVJtU";
 	
     function closePopUp(){
@@ -17,13 +22,13 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
     var zoneDirections = "directions";
     var zoneDirections1 = "directions1";
     var zoneDirections2 = "directions2";
-
+	
 	WA.room.onEnterZone("directions1", () => {
+		
     currentPopup =  WA.ui.openPopup("popUpStart","Willkommen! Du findest folgende Bereiche:\n\nOben Rechts: IT & Regelwerk\n\nUnten Rechts: Rettungszüge\n\nUnten Links: ZKB, FeB, Fahrzeugeinsatz\n\nOben Links: Auswertung und Abschluss",[
             {
                 label: "Schließen",
                 callback: (popup => {
-                    isCoWebSiteOpened = true;
                     closePopUp();
                 })
             }]);
@@ -31,11 +36,6 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
     WA.room.onLeaveZone("directions1", () =>{
         closePopUp();
-
-        if (isCoWebSiteOpened) {
-            WA.nav.closeCoWebSite();
-            isCoWebSiteOpened = false;
-        }
     })
 	
 	
