@@ -2434,14 +2434,14 @@
                 }, 
                 {
                  "class":"",
-                 "height":124.5,
+                 "height":192.5,
                  "id":22,
                  "name":"popUpStart",
                  "rotation":0,
                  "visible":true,
-                 "width":269,
-                 "x":1299,
-                 "y":78.5
+                 "width":567,
+                 "x":1163,
+                 "y":12.5
                 }],
          "opacity":1,
          "type":"objectgroup",

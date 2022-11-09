@@ -1,12 +1,6 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 var isCoWebSiteOpened =  false;
-var currentPopup = currentPopup =  WA.ui.openPopup("popUpStart","Willkommen! Du findest folgende Bereiche:\n\nOben Rechts: IT & Regelwerk\n\nUnten Rechts: Rettungszüge\n\nUnten Links: ZKB, FeB, Fahrzeugeinsatz\n\nOben Links: Auswertung und Abschluss",[
-            {
-                label: "Schließen",
-                callback: (popup => {
-                    closePopUp();
-                })
-            }]);
+var currentPopup = undefined
     
 	
     var urlMusikModern = "https://www.youtube.com/embed/nHxsomFVJtU";
@@ -25,7 +19,7 @@ var currentPopup = currentPopup =  WA.ui.openPopup("popUpStart","Willkommen! Du 
 	
 	WA.room.onEnterZone("directions1", () => {
 		
-    currentPopup =  WA.ui.openPopup("popUpStart","Willkommen! Du findest folgende Bereiche:\n\nOben Rechts: IT & Regelwerk\n\nUnten Rechts: Rettungszüge\n\nUnten Links: ZKB, FeB, Fahrzeugeinsatz\n\nOben Links: Auswertung und Abschluss",[
+    currentPopup =  WA.ui.openPopup("popUpStart","Willkommen! Du findest folgende Bereiche:\n\nOben Rechts: IT & Regelwerk\nUnten Rechts: Rettungszüge\nUnten Links: ZKB, FeB, Fahrzeugeinsatz\nOben Links: Auswertung und Abschluss",[
             {
                 label: "Schließen",
                 callback: (popup => {
