@@ -14,23 +14,8 @@ var currentPopup = undefined
 
     var zoneMusikModern = "music_modern";
     var zoneDirections = "directions";
-    var zoneDirections1 = "directions1";
     var zoneDirections2 = "directions2";
 	
-	WA.room.onEnterZone("directions1", () => {
-		
-    currentPopup =  WA.ui.openPopup("popUpStart","Willkommen! Du findest folgende Bereiche:\n\nOben Rechts: IT & Regelwerk\nUnten Rechts: Rettungszüge\nUnten Links: ZKB, FeB, Fahrzeugeinsatz\nOben Links: Auswertung und Abschluss",[
-            {
-                label: "Schließen",
-                callback: (popup => {
-                    closePopUp();
-                })
-            }]);
-    })
-
-    WA.room.onLeaveZone("directions1", () =>{
-        closePopUp();
-    })
 	
 	
 	
