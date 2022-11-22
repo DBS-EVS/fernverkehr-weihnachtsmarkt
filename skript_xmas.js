@@ -3,7 +3,8 @@ var isCoWebSiteOpened =  false;
 
 var currentPopup = undefined
 	
-    var urlMusikModern = "https://www.youtube.com/embed/nHxsomFVJtU";
+    var urlMusikModern = "https://www.youtube.com/embed/B1XNDChNrvs";
+	
 	
     function closePopUp(){
         if (currentPopup !== undefined) {
