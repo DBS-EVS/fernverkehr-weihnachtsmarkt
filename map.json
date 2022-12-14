@@ -3360,7 +3360,7 @@
         {
          "name":"mapImage",
          "type":"string",
-         "value":"weihnachtsmarkt.png"
+         "value":"map.png"
         }, 
         {
          "name":"mapName",
