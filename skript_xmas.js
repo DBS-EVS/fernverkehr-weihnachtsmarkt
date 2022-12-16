@@ -2,8 +2,7 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 var isCoWebSiteOpened =  false;
 
 var currentPopup = undefined
-	
-    var urlMusikModern = "https://www.youtube.com/embed/B1XNDChNrvs";
+var urlMusikModern = "https://www.youtube-nocookie.com/embed/OdGNY8AKLzo?autoplay=1";
 	
 	
     function closePopUp(){
@@ -27,7 +26,7 @@ var currentPopup = undefined
             {
                 label: "Her damit!",
                 callback: (popup => {
-                    WA.nav.openCoWebSite(urlMusikModern);
+                    WA.nav.openCoWebSite(urlMusikModern, false, "autoplay; encrypted-media");
                     isCoWebSiteOpened = true;
                     closePopUp();
                 })
