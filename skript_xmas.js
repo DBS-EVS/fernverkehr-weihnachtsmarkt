@@ -2,7 +2,7 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 var isCoWebSiteOpened =  false;
 
 var currentPopup = undefined
-var urlMusikModern = "https://www.youtube-nocookie.com/embed/OdGNY8AKLzo?autoplay=1";
+var urlMusikModern = "https://www.youtube-nocookie.com/embed/R6g8H13lqpE?autoplay=1";
 	
 	
     function closePopUp(){
